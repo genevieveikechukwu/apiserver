@@ -1,7 +1,7 @@
-from rest_framework import serializers
-from .models import Serverapi
+# from rest_framework import serializers
+# from .models import Serverapi
 
-class ServerapiSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Serverapi
-        fields = '__all__'
+# class ServerapiSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Serverapi
+#         fields = '__all__'
