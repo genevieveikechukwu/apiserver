@@ -21,6 +21,15 @@ def home(request, *args, **kwargs):
     "bio":"your bio"
   }
   return JsonResponse(data, headers=header)
+# @api_view(["GET, POST"])
+# def calculate(request, *args, **kwargs):
+#   header = {"Access-Control-Allow-Origin":"*"}
+#   data = {
+#     "operation_type":"",
+#     "x":
+#     "y":
+#   }
+#   return JsonResponse(data, headers=header)
 
 
 # class ListServerapi(generics.ListAPIView):
