@@ -1,7 +1,7 @@
-# from rest_framework import serializers
-# from .models import Serverapi
+from rest_framework import serializers
+from .models import Calculatorapi
 
-# class ServerapiSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Serverapi
-#         fields = '__all__'
+class CalculatorInputSerializer(serializers.Serializer):
+    operation_type = serializers.CharField(write_only=True, required=True)
+    x = serializers.FloatField(required=False)
+    y = serializers.FloatField(required=False)

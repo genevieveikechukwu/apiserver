@@ -13,3 +13,13 @@ class Serverapi(models.Model):
 
     def __str__(self) -> str:
         return self.slack_username
+
+class Calculatorapi(models.Model):
+    slack_username = models.CharField(max_length=120)
+    operation_type = models.CharField(max_length=120)
+    x = models.FloatField(blank=True, null=True)
+    y = models.FloatField(blank=True, null=True)
+    result = models.BigIntegerField(null=True, blank=True)
+
+    def __str__(self) -> str:
+        return self.slack_username

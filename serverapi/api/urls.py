@@ -1,9 +1,11 @@
 from django.urls import path
 # from .views import DetailServerapi, ListServerapi
-from . import views
+from .views import home, CalculateView
 
 urlpatterns = [
     # path('<int:pk>/', DetailServerapi.as_view()),
     # path('', ListServerapi.as_view(),)
-    path('', views.home, name='home')
+    path('', home, name='home'),
+    path('calculate', CalculateView.as_view(), name='calculate'),
+    # path('answer', RetrieveView.as_view(), name='answer'),
 ]
