@@ -42,13 +42,22 @@ class CalculateView(GenericAPIView):
         for i in bad_chars:
             operation_type = operation_type.replace(i, '')
         operation_sentence_list = self.request.data['operation_type'].split()
-        if(self.request.data['x']) and (self.request.data['y']) == '':
+        if(self.request.data['x'] == ''):
             regex = '\d+'
             match = re.findall(regex, operation_type)
-            new = match
-            self.request.data['x'] = ''.join(map(str, new[0]))
-            self.request.data['y'] = ''.join(map(str, new[1]))
-            # print(x, y)
+
+            request.data._mutable=True
+            self.request.data['x'] = ''.join(map(str, match[0]))
+            float(self.request.data['x'])
+
+        if (self.request.data['y'] == ''):
+            regex = '\d+'
+            match = re.findall(regex, operation_type)
+  
+            request.data._mutable=True
+            self.request.data['y'] = ''.join(map(str, match[1]))
+            float(self.request.data['y'])
+      
         x = self.request.data['x']
         y = self.request.data['y']
         check1 = any(item in operation_add for item in operation_sentence_list)
